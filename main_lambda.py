@@ -22,12 +22,16 @@ logging.getLogger("requests").setLevel(logging.WARNING)
 # Import the necessary schemas from local schema.py
 from schema import ChatMessage, TextPayload, UIComponentPayload, UserActionPayload
 
-# --- Constants ---
 DEFAULT_PROFILE_ID = "adf2b2d4-d59f-4e6e-8382-24062ca88f72"
-# Get API URL from environment variables
-API_GATEWAY_URL = os.getenv('API_ENDPOINT', '')
-API_KEY = os.getenv('API_KEY', '')
 
+# Get API URL from Streamlit secrets (for Streamlit Cloud) or environment variables (for local)
+try:
+    API_GATEWAY_URL = st.secrets.get('API_ENDPOINT', os.getenv('API_ENDPOINT', ''))
+    API_KEY = st.secrets.get('API_KEY', os.getenv('API_KEY', ''))
+except:
+    # Fallback to environment variables if secrets are not available
+    API_GATEWAY_URL = os.getenv('API_ENDPOINT', '')
+    API_KEY = os.getenv('API_KEY', '') 
 # --- API Helper Functions ---
 def call_ai_response_api(interact_profile_id: str, user_message: dict) -> dict:
     """Call the API Gateway Lambda function for AI response generation."""
