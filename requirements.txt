@@ -1,0 +1,35 @@
+# Streamlit App Requirements
+streamlit
+streamlit-extras
+
+# API 호출용
+requests
+
+# 환경변수 관리
+python-dotenv
+
+boto3==1.37.37
+python-json-logger==0.1.11
+
+# Pydantic for core compatibility
+pydantic>=2,<3
+urllib3==1.26.18
+six==1.16.0
+
+langchain~=0.3.0
+langchain-community~=0.3.0
+langchain-text-splitters~=0.3.0
+langchain-core~=0.3.0
+langchain-experimental~=0.3.0
+
+# LangGraph
+langgraph~=0.2.20
+
+# LLM providers
+langchain-openai~=0.2.0
+langchain-google-genai~=2.0.0
+openai
+google-generativeai
+
+# Utilities
+beautifulsoup4==4.12.3 

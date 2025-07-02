@@ -1,0 +1,31 @@
+boto3==1.37.37
+python-json-logger==0.1.11
+requests==2.31.0
+
+# Env/Utility
+python-dotenv==1.0.1
+# Pydantic for core compatibility
+pydantic>=2,<3
+
+urllib3==1.26.18
+six==1.16.0
+
+# Base packages
+langchain~=0.3.0
+langchain-community~=0.3.0
+langchain-text-splitters~=0.3.0
+langchain-core~=0.3.0
+langchain-experimental~=0.3.0
+
+# Downstream packages
+langgraph~=0.2.20
+
+langchain-openai~=0.2.0
+langchain-google-genai~=2.0.0
+
+openai
+google-generativeai
+
+beautifulsoup4==4.12.3
+streamlit
+streamlit-extras
